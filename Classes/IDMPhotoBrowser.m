@@ -1278,6 +1278,10 @@ NSLocalizedStringFromTableInBundle((key), nil, [NSBundle bundleWithPath:[[NSBund
 				}];
 			}
 			
+            if ([self.activityViewController respondsToSelector:@selector(popoverPresentationController)]) {
+                [self.activityViewController.popoverPresentationController setBarButtonItem:sender];
+            }
+            
             [self presentViewController:self.activityViewController animated:YES completion:nil];
         }
         else
